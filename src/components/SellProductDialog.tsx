@@ -35,7 +35,7 @@ export const SellProductDialog = ({
     const quantity = parseInt(quantitySold);
 
     if (quantity > 0 && quantity <= product.stock) {
-      // Add sale record
+      // For adding record
       addSaleRecord({
         productId: product.id,
         productName: product.name,
@@ -46,10 +46,10 @@ export const SellProductDialog = ({
         category: product.category,
       });
 
-      // Update inventory
+      // Updating inventory
       onSale(product.id, quantity);
 
-      // Reset and close
+      // For Reset and close
       setQuantitySold("");
       setIsOpen(false);
     }

@@ -34,7 +34,7 @@ const Revenue = () => {
   const [timeFilter, setTimeFilter] = useState("monthly");
   const [categoryFilter, setCategoryFilter] = useState("all");
 
-  // Get real-time metrics from actual sales data with filters applied
+  // Get actual sales data and also filter can be use.
   const metrics = calculateRevenueMetrics(categoryFilter);
   const salesData = getSalesDataByMonth(timeFilter, categoryFilter);
   const categoryData = getSalesByCategory(categoryFilter);
@@ -80,7 +80,6 @@ const Revenue = () => {
         </div>
       </div>
 
-      {/* Key Revenue Metrics - Real-time data with filters */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Card className="hover:shadow-lg transition-shadow duration-200">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -138,7 +137,6 @@ const Revenue = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Revenue Trend Chart - Filtered data */}
         <Card className="hover:shadow-lg transition-shadow duration-200">
           <CardHeader>
             <CardTitle className="text-lg font-semibold text-gray-900">
@@ -191,7 +189,6 @@ const Revenue = () => {
           </CardContent>
         </Card>
 
-        {/* Revenue by Category - Filtered data */}
         <Card className="hover:shadow-lg transition-shadow duration-200">
           <CardHeader>
             <CardTitle className="text-lg font-semibold text-gray-900">

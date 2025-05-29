@@ -52,7 +52,7 @@ const Inventory = () => {
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
   const [editingProduct, setEditingProduct] = useState<any>(null);
 
-  // Form state for new product
+  // For new product
   const [newProduct, setNewProduct] = useState({
     name: "",
     category: "",
@@ -62,7 +62,7 @@ const Inventory = () => {
     description: "",
   });
 
-  // Form state for editing product
+  // For editing product
   const [editProduct, setEditProduct] = useState({
     name: "",
     category: "",
@@ -76,7 +76,7 @@ const Inventory = () => {
     e.preventDefault();
     console.log("New product:", newProduct);
 
-    // Create new product object
+    // New product object
     const productToAdd = {
       id: inventoryData.length + 1,
       name: newProduct.name,
@@ -472,7 +472,6 @@ const Inventory = () => {
         </Dialog>
       </div>
 
-      {/* Inventory Summary Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         <Card className="hover:shadow-lg transition-shadow duration-200">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -554,7 +553,6 @@ const Inventory = () => {
         </Card>
       </div>
 
-      {/* Filters and Search */}
       <Card>
         <CardHeader>
           <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">

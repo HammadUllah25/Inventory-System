@@ -41,7 +41,7 @@ export function AppSidebar() {
           <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
             <img src={logo} alt="logo" className="w-7 h-6" />
           </div>
-          <h1 className="text-xl font-bold text-gray-900">InventorySystem</h1>
+          <h1 className="text-xl font-bold text-gray-900">Inventory System</h1>
         </div>
       </SidebarHeader>
       <SidebarContent>

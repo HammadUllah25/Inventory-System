@@ -23,7 +23,7 @@ const mockRevenueData = [
 ];
 
 const Dashboard = () => {
-  // Calculate real-time metrics from inventory data
+  // Calculate metrics from inventory data
   const totalProducts = mockInventoryData.length;
   const inStockProducts = mockInventoryData.filter((item) => {
     const status = getProductStatus(item.stock, item.threshold);
@@ -38,7 +38,7 @@ const Dashboard = () => {
     return status === "Out of Stock";
   });
 
-  // Calculate total inventory value (assuming this represents revenue potential)
+  // Calculate total inventory value
   const totalInventoryValue = mockInventoryData.reduce((total, item) => {
     return total + item.price * item.stock;
   }, 0);
@@ -48,12 +48,12 @@ const Dashboard = () => {
     return total + item.stock;
   }, 0);
 
-  // Get low stock items for alerts
+  // low stock items alerts
   const lowStockItems = mockInventoryData
     .filter(
       (item) => getProductStatus(item.stock, item.threshold) === "Low Stock"
     )
-    .slice(0, 3); // Show only first 3 items
+    .slice(0, 3); // Display just starting 3
 
   return (
     <div className="flex-1 p-6 space-y-6">
@@ -69,7 +69,6 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* Key Metrics */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <Card className="hover:shadow-lg transition-shadow duration-200">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -173,7 +172,7 @@ const Dashboard = () => {
         <Card className="hover:shadow-lg transition-shadow duration-200">
           <CardHeader>
             <CardTitle className="text-lg font-semibold text-gray-900 flex items-center gap-2">
-              <AlertTriangle className="h-5 w-5 text-red-600" />
+              <AlertTriangle className="h-5 w-5 text-yellow-600" />
               Low Stock Alerts
             </CardTitle>
           </CardHeader>
@@ -183,7 +182,7 @@ const Dashboard = () => {
                 lowStockItems.map((item) => (
                   <div
                     key={item.id}
-                    className="flex items-center justify-between p-3 bg-red-50 rounded-lg border border-red-100"
+                    className="flex items-center justify-between p-3 bg-yellow-80 rounded-lg border border-yellow-100"
                   >
                     <div>
                       <p className="font-medium text-gray-900">{item.name}</p>
@@ -193,7 +192,7 @@ const Dashboard = () => {
                     </div>
                     <Badge
                       variant="destructive"
-                      className="bg-red-100 text-red-800 hover:bg-red-200"
+                      className="bg-yellow-100 text-yellow-800 hover:bg-yellow-300"
                     >
                       Low Stock
                     </Badge>
@@ -211,7 +210,7 @@ const Dashboard = () => {
         </Card>
       </div>
 
-      {/* Additional Stock Overview */}
+      {/* Stock Status Overview */}
       <Card className="hover:shadow-lg transition-shadow duration-200">
         <CardHeader>
           <CardTitle className="text-lg font-semibold text-gray-900">
