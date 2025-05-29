@@ -1,5 +1,6 @@
 import { BarChart3, Package, Plus, TrendingUp, Home } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import logo from "../../public/Logo.png";
 import {
   Sidebar,
   SidebarContent,
@@ -28,11 +29,6 @@ const menuItems = [
     url: "/inventory",
     icon: Package,
   },
-  {
-    title: "Add Product",
-    url: "/products/new",
-    icon: Plus,
-  },
 ];
 
 export function AppSidebar() {
@@ -43,7 +39,7 @@ export function AppSidebar() {
       <SidebarHeader className="p-6">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-            <img src="/Logo.png" alt="logo" className="w-7 h-6" />
+            <img src={logo} alt="logo" className="w-7 h-6" />
           </div>
           <h1 className="text-xl font-bold text-gray-900">InventorySystem</h1>
         </div>
